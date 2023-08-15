@@ -8,7 +8,7 @@ def get_birthdays_per_week(users):
 
     print("Ближчі дні народження:")
 
-    for day in range(7):
+    for day in range(8):
         target_day = current_day + datetime.timedelta(days=day)
         day_name = days_of_week[target_day.weekday()]
         birthday_people = [user["name"] for user in users if user["birthday"].month == target_day.month and user["birthday"].day == target_day.day]
@@ -17,10 +17,13 @@ def get_birthdays_per_week(users):
             print(f"{day_name}:", ", ".join(birthday_people))
 
 users = [
-    {"name": "Bill", "birthday": datetime.datetime(2000, 8, 16)},
-    {"name": "Jill", "birthday": datetime.datetime(1995, 8, 18)},
-    {"name": "Kim", "birthday": datetime.datetime(1987, 8, 20)},
-    {"name": "Jan", "birthday": datetime.datetime(1990, 8, 21)},
+    {"name": "people1", "birthday": datetime.datetime(2000, 8, 16)},
+    {"name": "people2", "birthday": datetime.datetime(1999, 8, 18)},
+    {"name": "people3", "birthday": datetime.datetime(1998, 8, 20)},
+    {"name": "people4", "birthday": datetime.datetime(1997, 8, 21)},
+    {"name": "people5", "birthday": datetime.datetime(1996, 8, 24)},
+    {"name": "people6", "birthday": datetime.datetime(2000, 8, 16)},
+    {"name": "people7", "birthday": datetime.datetime(2001, 8, 22)},
 ]
 
 get_birthdays_per_week(users)
